@@ -185,6 +185,22 @@ function reverseString(str) {
   var resultDiv = document.querySelector('#output');
   
   function clickHandler(e) {
+
+    if(bdayInput.value){
+    for (let i=1; i<=3; i++) {
+      task(i);
+   }
+     
+   function task(j) {
+     setTimeout(function() {
+      resultDiv.innerText ="Loading in..." + j;
+     }, 900*j);
+   }
+
+
+    setTimeout(function(){
+
+    
     var bdayString = bdayInput.value;
   
     if (bdayString !== '') {
@@ -224,6 +240,14 @@ function reverseString(str) {
         resultDiv.innerText = 'Your birthday is palindrome!';
       }
     }
+
+  },4000)
+
+  }
+  else{
+      resultDiv.innerText="Select a date"
+  }
+
   }
   
   showBtn.addEventListener('click', clickHandler);
